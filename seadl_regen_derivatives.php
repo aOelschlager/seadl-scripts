@@ -23,9 +23,9 @@ $repository = new FedoraRepository($api, $cache);
 
 $csv = array_map('str_getcsv', file('/file/path/tiff_pids.csv'));
 foreach ($csv as $row) {
-    $id = $row[0];
-    $file_name = $row[1];
-    print "Working on PID: " . $id . "\n";
+	$id = $row[0];
+    	$file_name = $row[1];
+    	print "Working on PID: " . $id . "\n";
 	$object = $repository->getObject($id);
 	islandora_paged_content_page_derive_image_datastreams($object);
 }
