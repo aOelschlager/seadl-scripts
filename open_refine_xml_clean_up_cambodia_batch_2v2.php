@@ -148,7 +148,7 @@
       $domDocument->formatOutput = true;
       $domDocument->save($new_file);
 
-	  $config = array(
+      $config = array(
         'indent' => true,
         'indent-spaces' => 16,
         'indent-with-tabs' => true,
@@ -157,12 +157,12 @@
         'input-xml'  => true,
         'output-xml' => true,
         'wrap'       => false
-	  );
+      );
 
-	  $tidy = new Tidy();
+      $tidy = new Tidy();
 
-	  $repaired = $tidy->repairfile($new_file, $config);
+      $repaired = $tidy->repairfile($new_file, $config);
 
-	  file_put_contents($new_file, $repaired);
+      file_put_contents($new_file, $repaired);
    }
 ?>
