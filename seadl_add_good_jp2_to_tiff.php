@@ -26,12 +26,12 @@ foreach ($csv as $row) {
 	print "Working on PID: " . $id . "\n";
 	$object = $repository->getObject($id);
 	$dsid = 'OBJ';
-    $datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid);
-    $datastream->label = 'OBJ Datastream';
-    $datastream->mimeType = 'image/tiff';
+    	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid);
+    	$datastream->label = 'OBJ Datastream';
+    	$datastream->mimeType = 'image/tiff';
 	
-    $datastream->setContentFromFile($file);
-    $object->ingestDatastream($datastream);
+    	$datastream->setContentFromFile($file);
+    	$object->ingestDatastream($datastream);
 
 	print "Finished PID: " . $id . "\n";
 }
