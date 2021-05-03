@@ -30,9 +30,9 @@ foreach ($csv as $row) {
 
 		$dsid = 'STREAMING';
 
-        $datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid);
-        $datastream->label = 'Streaming Info';
-        $datastream->mimeType = 'application/xml';
+        	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid);
+        	$datastream->label = 'Streaming Info';
+        	$datastream->mimeType = 'application/xml';
 
  		$dom = new DomDocument();
  		$sources = $dom->appendChild($dom->createElement('sources'));
@@ -45,11 +45,11 @@ foreach ($csv as $row) {
 		$dom->formatOutput = true;
 		$xml_string = $dom->saveXML();
 
-        $datastream->setContentFromString($xml_string);
+        	$datastream->setContentFromString($xml_string);
 
-        if (!isset($object['STREAMING'])) {
-                $object->ingestDatastream($datastream);
-        }
+        	if (!isset($object['STREAMING'])) {
+                	$object->ingestDatastream($datastream);
+        	}
 	}
 }
 ?>
