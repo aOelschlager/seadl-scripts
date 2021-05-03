@@ -13,7 +13,7 @@
 	mkdir($bn_folder, 0777);
 
 	$cdir = scandir($dir);
-    $bn_name = "";
+    	$bn_name = "";
 	$bn_title = "";
 	
 	$print_array = array();
@@ -30,14 +30,14 @@
 				$bn_name = "BN_" . $b_t_arr[2];
 
 				$size = sizeof($temp_name);
-                if ($size <= 2) {
+                		if ($size <= 2) {
 					if ($size > 1) {
-							$bn_title = trim($temp_name[0]);
-							$bn_name = $bn_name . "-MISSING";
-						}
-                } else {
+						$bn_title = trim($temp_name[0]);
+						$bn_name = $bn_name . "-MISSING";
+					}
+               			} else {
 					$bn_title = trim($temp_name[2]);
-                }
+                		}
 				$current_dir_name = $dir . DIRECTORY_SEPARATOR . $bn_name;
 				rename($dir_name, $current_dir_name);
 				$sdir = scandir($current_dir_name);
@@ -116,9 +116,9 @@
 										$val_exten = strtolower($val_exten);
 										if ($val_exten === "tif" | $val_exten === "tiff") {
 											$file_path = $new_sub_dir . DIRECTORY_SEPARATOR . $value3;
-                                            $file_name_change = $bn_folder . DIRECTORY_SEPARATOR . $bn_name . "_cover.tif";
-                                            print "Cover Title: " . $file_name_change . "\n";
-                                			rename($file_path, $file_name_change);
+                                            						$file_name_change = $bn_folder . DIRECTORY_SEPARATOR . $bn_name . "_cover.tif";
+                                            						print "Cover Title: " . $file_name_change . "\n";
+                                							rename($file_path, $file_name_change);
 										}
 									}
 								}
@@ -130,6 +130,6 @@
 		}
 	}
 	$fp = fopen($write_file_name, 'w');
-    fwrite($fp, print_r($print_array, TRUE));
-    fclose($fp)
+    	fwrite($fp, print_r($print_array, TRUE));
+    	fclose($fp)
 ?>
