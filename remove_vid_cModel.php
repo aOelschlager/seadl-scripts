@@ -19,8 +19,8 @@ $repository = new FedoraRepository($api, $cache);
 
 $csv = array_map('str_getcsv', file('/file/path/test_csv.csv'));
 foreach ($csv as $row) {
-    $id = $row[0];
-    $link = $row[1];
+    	$id = $row[0];
+    	$link = $row[1];
 
 	$object = $repository->getObject($id);
 	$object->relationships->remove('info:fedora/fedora-system:def/model#', 'hasModel','islandora:sp_videoCModel');
